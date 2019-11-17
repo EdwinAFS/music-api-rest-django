@@ -2,7 +2,7 @@
 
 ## Python 3.8.0
 
-* Instale las dependencias usando **pip install -r require.txt**
+* Instale las dependencias usando **pip install -r requerimientos.txt**
 * Migrar la base de datos sqlite3 **python manage.py migrate**
 * Iniciar el servidor **python manage.py runserver**
 
