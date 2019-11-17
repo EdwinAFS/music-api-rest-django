@@ -13,7 +13,7 @@
 * Puede navegar y realizar cualquier cambio ya que usted es admin
 
 ## Token de autenticacion
-Para realizar una peticion en cualquier url se debe tener agregado en un header Authorization : Token *AquiTokenGeneradoEnLogin*
+Para realizar una peticion en cualquier url a excepcion del login, se debe tener agregado en un header Authorization : Token *AquiTokenGeneradoEnLogin*
 
 ## Rutas
 
