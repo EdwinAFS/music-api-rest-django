@@ -12,6 +12,7 @@ from django.contrib.auth import login,logout,authenticate
 
 from .models import *
 from .serializers import *
+from django.contrib.auth.models import User
 
 
 """ **************************************************************************************************************** """
@@ -172,6 +173,18 @@ class UsuarioLogoutView( viewsets.ModelViewSet ):
         request.user.auth_token.delete()
         logout(request)
         return Response(status = status.HTTP_200_OK)
+
+class UsuarioView( APIView ):
+    permission_classes = (AllowAny,)
+    serializer_class = UsuarioSerializer
+    
+    def get( self , request, pk=0 ):
+        if pk != 0:
+            usuario = get_object_or_404(User,id=pk)
+            return Response({ "usuario" : UsuarioSerializer(usuario).data})
+        else:
+            usuarios = User.objects.all()
+            return Response({ "usuarios" : UsuarioSerializer(usuarios, many=True).data})
 
 """ **************************************************************************************************************** """
 

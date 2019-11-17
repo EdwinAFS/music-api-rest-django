@@ -24,6 +24,8 @@ urlpatterns = [
     path('utilidades/ciudades', UtilidadesView.as_view({'get': 'ciudades'})),
     path('utilidades/lenguajes', UtilidadesView.as_view({'get': 'lenguajes'})),
     
+    path('usuarios/', UsuarioView.as_view()),
+    path('usuarios/<int:pk>', UsuarioView.as_view()),
     path('usuario/registration', UsuarioRegistrationView.as_view({'post': 'registration'})),
     path('usuario/logout', UsuarioLogoutView.as_view({'get': 'logout'})),
 
