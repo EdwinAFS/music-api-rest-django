@@ -180,7 +180,7 @@ class UsuarioView( APIView ):
     
     def get( self , request, pk=0 ):
         if pk != 0:
-            usuario = get_object_or_404(User,id=pk)
+            usuario = get_object_or_404(User,username=pk)
             return Response({ "usuario" : UsuarioSerializer(usuario).data})
         else:
             usuarios = User.objects.all()
